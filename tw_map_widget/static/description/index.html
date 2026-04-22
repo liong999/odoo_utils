@@ -11,7 +11,6 @@
             <div class="col-12 text-center">
                 <h1 class="display-4 font-weight-bold" style="color: #0d2b52; margin-bottom: 10px;">TW Map Widget</h1>
                 <p class="lead" style="color: #555; font-size: 1.25rem;">Premium Interactive Maps Integration for Odoo 18</p>
-                <img src="banner.png" alt="TW Map Widget Banner" class="img-fluid rounded shadow-lg mt-4 w-100" style="max-height: 500px; object-fit: cover;" />
             </div>
         </div>
 
@@ -136,7 +135,7 @@
                         <img src="example_form.png" alt="Example Form" class="img-fluid rounded shadow-sm w-100 mb-5" />
                         
                         <h4 class="font-weight-bold mb-3" style="color: #0d2b52;"><i class="fa fa-code text-muted mr-2"></i> XML Implementation</h4>
-                        <pre class="bg-dark text-light p-4 rounded shadow-inner" style="font-size: 0.95rem; overflow-x: auto; border-left: 4px solid #ff9800;"><code>&lt;group string="LOCATION"&gt;
+                        <pre class="bg-dark text-light p-4 rounded shadow-inner" style="font-size: 0.95rem; overflow-x: auto; border-left: 4px solid #ff9800;"><code style="background-color: transparent !important; color: inherit !important; padding: 0 !important;">&lt;group string="LOCATION"&gt;
     &lt;field name="lat" required="1"/&gt;
     &lt;field name="long" required="1"/&gt;
     &lt;field name="map_location" widget="tw_map" options="{'lat_field': 'lat', 'long_field': 'long', 'address_field': 'street'}"/&gt;
@@ -153,6 +152,10 @@
     &lt;field name="sub_district_id" placeholder="Kelurahan" required="1" options='{"no_open": True, "no_create": True}' /&gt;    
 &lt;/group&gt;</code></pre>
                     </div>
+                </div>
+
+                <div class="mt-5 text-center">
+                    <img src="banner.png" alt="TW Map Widget Banner" class="img-fluid rounded shadow-lg mx-auto d-block" style="max-width: 800px; max-height: 400px; object-fit: cover;" />
                 </div>
             </div>
         </div>
