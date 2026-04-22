@@ -10,8 +10,9 @@
     """,
     'author': "Liong",
     'website': "https://www.linkedin.com/in/nagara-liong-50ab07136/",
-    'category': 'Hidden',
+    'category': 'Tools/UI',
     'version': '18.0.1.0.0',
+    'license': 'LGPL-3',
     'depends': ['base', 'web', 'base_geolocalize'],
     'data': [
         # views, security, etc.
