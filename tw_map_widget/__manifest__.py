@@ -8,8 +8,8 @@
         This module provides an OWL field widget for Maps.
         It supports OpenStreetMap (via Leaflet.js) and Google Maps API based on settings in base_geolocalize.
     """,
-    'author': "Tunas Group",
-    'website': "http://www.tunasgroup.com",
+    'author': "Liong",
+    'website': "https://www.linkedin.com/in/nagara-liong-50ab07136/",
     'category': 'Hidden',
     'version': '18.0.1.0.0',
     'depends': ['base', 'web', 'base_geolocalize'],
