@@ -138,7 +138,9 @@
                         <pre class="bg-dark text-light p-4 rounded shadow-inner" style="font-size: 0.95rem; overflow-x: auto; border-left: 4px solid #ff9800;"><code style="background-color: transparent !important; color: inherit !important; padding: 0 !important;">&lt;group string="LOCATION"&gt;
     &lt;field name="lat" required="1"/&gt;
     &lt;field name="long" required="1"/&gt;
-    &lt;field name="map_location" widget="tw_map" options="{'lat_field': 'lat', 'long_field': 'long', 'address_field': 'street'}"/&gt;
+    &lt;field name="map_location"/&gt;
+    &lt;widget="tw_map"/&gt;
+    &lt;options="{'lat_field': 'lat', 'long_field': 'long', 'address_field': 'street'}"/&gt;
 &lt;/group&gt;
 &lt;group string="ADDRESS"&gt;
     &lt;field name="street" placeholder="Street..." required="1"/&gt;
@@ -146,10 +148,10 @@
         &lt;field name="rt" placeholder="RT" style="width: 50%"/&gt;
         &lt;field name="rw" placeholder="RW" style="width: 50%"/&gt;
     &lt;/div&gt;
-    &lt;field name="state_id" class="oe_no_button" placeholder="Provinsi" required="1" options='{"no_open": True, "no_create": True}'/&gt;
-    &lt;field name="city_id" placeholder="Kota / Kab" required="1" options='{"no_open": True, "no_create": True}'/&gt;
-    &lt;field name="district_id" placeholder="Kecamatan" required="1" options='{"no_open": True, "no_create": True}'/&gt;					
-    &lt;field name="sub_district_id" placeholder="Kelurahan" required="1" options='{"no_open": True, "no_create": True}' /&gt;    
+    &lt;field name="state_id" class="oe_no_button" placeholder="Provinsi" required="1"/&gt;
+    &lt;field name="city_id" placeholder="Kota / Kab" required="1"/&gt;
+    &lt;field name="district_id" placeholder="Kecamatan" required="1"/&gt;					
+    &lt;field name="sub_district_id" placeholder="Kelurahan" required="1" /&gt;    
 &lt;/group&gt;</code></pre>
                     </div>
                 </div>
