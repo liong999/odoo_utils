@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "TW Map Widget",
+    'name': "Map Widget",
     'summary': """
         A Map Widget integrating with base_geolocalize (Google Maps & OpenStreetMap/Leaflet)
     """,
