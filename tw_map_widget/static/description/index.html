@@ -138,9 +138,9 @@
                         <pre class="bg-dark text-light p-4 rounded shadow-inner" style="font-size: 0.95rem; overflow-x: auto; border-left: 4px solid #ff9800;"><code style="background-color: transparent !important; color: inherit !important; padding: 0 !important;">&lt;group string="LOCATION"&gt;
     &lt;field name="lat" required="1"/&gt;
     &lt;field name="long" required="1"/&gt;
-    &lt;field name="map_location"/&gt;
-    &lt;widget="tw_map"/&gt;
-    &lt;options="{'lat_field': 'lat', 'long_field': 'long', 'address_field': 'street'}"/&gt;
+    &lt;field name="map_location"
+        widget="tw_map"
+        options="{'lat_field': 'lat', 'long_field': 'long', 'address_field': 'street'}"/&gt;
 &lt;/group&gt;
 &lt;group string="ADDRESS"&gt;
     &lt;field name="street" placeholder="Street..." required="1"/&gt;
