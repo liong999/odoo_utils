@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Login reCAPTCHA</title>
+</head>
+<body>
+    <section class="container mt-5 mb-5" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+        <!-- Module Header -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 font-weight-bold" style="color: #0d2b52; margin-bottom: 10px;">Web Login reCAPTCHA</h1>
+                <p class="lead" style="color: #555; font-size: 1.25rem;">Secure Odoo Backend & Web Login with Google reCAPTCHA v2 & v3</p>
+            </div>
+        </div>
+
+        <!-- Key Features Grid -->
+        <div class="row mt-5 pt-4">
+            <div class="col-md-12 text-center mb-5">
+                <h2 class="font-weight-bold" style="color: #0d2b52;">Key Features</h2>
+                <hr style="width: 60px; border-top: 4px solid #00a09d; margin: 15px auto;" />
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0" style="transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="card-body text-center p-4">
+                        <div class="mb-4">
+                            <i class="fa fa-shield fa-4x" style="color: #00a09d;"></i>
+                        </div>
+                        <h5 class="card-title font-weight-bold mb-3" style="color: #0d2b52;">Brute-Force Protection</h5>
+                        <p class="card-text text-muted">Blocks automated bot attacks, credentials stuffing, and malicious login attempts before authentication occurs.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0" style="transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="card-body text-center p-4">
+                        <div class="mb-4">
+                            <i class="fa fa-sliders fa-4x" style="color: #00a09d;"></i>
+                        </div>
+                        <h5 class="card-title font-weight-bold mb-3" style="color: #0d2b52;">Multi-Version Support</h5>
+                        <p class="card-text text-muted">Flexible configuration allowing you to switch between Google reCAPTCHA v3 (Invisible) and v2 (Checkbox) seamlessly.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0" style="transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="card-body text-center p-4">
+                        <div class="mb-4">
+                            <i class="fa fa-cogs fa-4x" style="color: #00a09d;"></i>
+                        </div>
+                        <h5 class="card-title font-weight-bold mb-3" style="color: #0d2b52;">Native Settings Integration</h5>
+                        <p class="card-text text-muted">Integrates directly into Odoo <em>Settings &gt; General Settings &gt; Integrations</em> alongside default reCAPTCHA configurations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0" style="transition: transform 0.3s; cursor: pointer; border-top: 4px solid #ff9800 !important;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="card-body text-center p-4">
+                        <div class="mb-4">
+                            <i class="fa fa-check-square-o fa-4x" style="color: #ff9800;"></i>
+                        </div>
+                        <h5 class="card-title font-weight-bold mb-3" style="color: #0d2b52;">reCAPTCHA v2 Checkbox <span class="badge badge-warning text-white">FEATURED</span></h5>
+                        <p class="card-text text-muted">Provides a full backend API verification engine for Google reCAPTCHA v2 "I'm not a robot" interactive checkboxes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0" style="transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="card-body text-center p-4">
+                        <div class="mb-4">
+                            <i class="fa fa-eye-slash fa-4x" style="color: #00a09d;"></i>
+                        </div>
+                        <h5 class="card-title font-weight-bold mb-3" style="color: #0d2b52;">reCAPTCHA v3 Invisible</h5>
+                        <p class="card-text text-muted">Silent risk scoring that detects human behavior without disrupting user login flow with interactive challenges.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0" style="transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="card-body text-center p-4">
+                        <div class="mb-4">
+                            <i class="fa fa-mobile fa-4x" style="color: #00a09d;"></i>
+                        </div>
+                        <h5 class="card-title font-weight-bold mb-3" style="color: #0d2b52;">Responsive UX</h5>
+                        <p class="card-text text-muted">Optimized widget rendering for both desktop browsers and mobile web interfaces with clear user error messaging.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Detailed reCAPTCHA Version Section -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h2 class="font-weight-bold text-center mb-5" style="color: #0d2b52;">Understanding reCAPTCHA Versions</h2>
+                
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm border-0" style="border-left: 4px solid #6c757d !important;">
+                            <div class="card-body p-4">
+                                <h4 class="font-weight-bold mb-3" style="color: #343a40;"><i class="fa fa-power-off text-secondary mr-2"></i> Off</h4>
+                                <p class="text-muted">Completely disables reCAPTCHA validation on the backend login form. Standard authentication proceeds without captcha token checks.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm border-0" style="border-left: 4px solid #00a09d !important;">
+                            <div class="card-body p-4">
+                                <h4 class="font-weight-bold mb-3" style="color: #00a09d;"><i class="fa fa-user-secret mr-2"></i> v3 (Invisible)</h4>
+                                <p class="text-muted">Monitors login requests seamlessly in the background. Google assigns a risk score based on interaction patterns without forcing users to solve puzzles or check boxes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm border-0" style="border-left: 4px solid #ff9800 !important;">
+                            <div class="card-body p-4">
+                                <h4 class="font-weight-bold mb-3" style="color: #ff9800;"><i class="fa fa-check-square mr-2"></i> v2 (Checkbox)</h4>
+                                <p class="text-muted">Displays an explicit <em>"I'm not a robot"</em> checkbox widget on the login form. Requires explicit user interaction before submitting login credentials.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to Configure -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="p-5 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+                    <h2 class="font-weight-bold text-center mb-5" style="color: #0d2b52;">Configuration & Setup Guide</h2>
+                    <ul class="list-unstyled mx-auto" style="font-size: 1.15rem; color: #444; max-width: 800px; line-height: 1.8;">
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="fa fa-check-circle mt-1 mr-3" style="color: #00a09d; font-size: 1.5rem;"></i> 
+                            <div><strong>1. Module Installation:</strong> Install <code>web_login_captcha</code> from the Apps menu.</div>
+                        </li>
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="fa fa-check-circle mt-1 mr-3" style="color: #00a09d; font-size: 1.5rem;"></i> 
+                            <div><strong>2. Access Settings:</strong> Navigate to <em>Settings &gt; General Settings &gt; Integrations</em>.</div>
+                        </li>
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="fa fa-check-circle mt-1 mr-3" style="color: #00a09d; font-size: 1.5rem;"></i> 
+                            <div><strong>3. Enter reCAPTCHA Credentials:</strong> Input your Google reCAPTCHA <strong>Site Key</strong> and <strong>Secret Key</strong>.</div>
+                        </li>
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="fa fa-check-circle mt-1 mr-3" style="color: #00a09d; font-size: 1.5rem;"></i> 
+                            <div><strong>4. Select Version:</strong> Choose your preferred <strong>ReCAPTCHA Version</strong> (<em>Off</em>, <em>ReCAPTCHA v3 (Invisible)</em>, or <em>ReCAPTCHA v2 (Checkbox)</em>).</div>
+                        </li>
+                        <li class="mb-4 d-flex align-items-start">
+                            <i class="fa fa-check-circle mt-1 mr-3" style="color: #00a09d; font-size: 1.5rem;"></i> 
+                            <div><strong>5. Save & Test:</strong> Click <strong>Save</strong>. Log out and visit the login page to verify the reCAPTCHA widget in action.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Implementation Example & Preview -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h2 class="font-weight-bold text-center mb-5" style="color: #0d2b52;">Technical Implementation & Interface Preview</h2>
+                
+                <div class="card shadow-sm border-0 mb-4" style="border-top: 4px solid #00a09d !important;">
+                    <div class="card-body p-5">
+                        <img src="login_preview.png" alt="Odoo Login reCAPTCHA Preview" class="img-fluid rounded shadow-sm w-100 mb-5" />
+                        
+                        <h4 class="font-weight-bold mb-3" style="color: #0d2b52;"><i class="fa fa-code text-muted mr-2"></i> Python Config & Verification Override</h4>
+                        <pre class="bg-dark text-light p-4 rounded shadow-inner" style="font-size: 0.95rem; overflow-x: auto; border-left: 4px solid #ff9800;"><code style="background-color: transparent !important; color: inherit !important; padding: 0 !important;"># Selection field in res.config.settings
+recaptcha_version = fields.Selection([
+    ('off', 'Off'),
+    ('v3_invisible', 'ReCAPTCHA v3 (Invisible)'),
+    ('v2_checkbox', 'ReCAPTCHA v2 (Checkbox)'),
+], string="ReCAPTCHA Version", default='off', config_parameter='web_login_captcha.recaptcha_version')</code></pre>
+                    </div>
+                </div>
+
+                <div class="mt-5 text-center">
+                    <img src="banner.png" alt="Web Login reCAPTCHA Banner" class="img-fluid rounded shadow-lg mx-auto d-block" style="max-width: 800px; max-height: 450px; object-fit: cover;" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="row mt-5 mb-5 text-center">
+            <div class="col-12">
+                <h3 class="font-weight-bold" style="color: #0d2b52;">Need Help or Customization?</h3>
+                <p class="text-muted mt-3 mb-4" style="font-size: 1.1rem;">Our team is ready to assist you in securing your Odoo instances and customizing login security options.</p>
+                <a href="http://www.tunasgroup.com" target="_blank" class="btn btn-lg px-5 py-3 font-weight-bold" style="background-color: #00a09d; color: white; border-radius: 30px; box-shadow: 0 4px 10px rgba(0,160,157,0.3);">Contact Us</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
