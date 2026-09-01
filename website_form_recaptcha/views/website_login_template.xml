@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="login_form" inherit_id="web.login" name="Login Form Captcha" priority="99">
+        <xpath expr="//div[contains(@class, 'field-password')][last()]" position="after">
+            <t t-set="recaptcha_active" t-value="request.env['ir.config_parameter'].sudo().get_param('recaptcha.active', '0')"/>
+            <t t-set="recaptcha_site_key" t-value="request.env['ir.config_parameter'].sudo().get_param('recaptcha.key.site') or request.env['ir.config_parameter'].sudo().get_param('website_form_recaptcha.site_key')"/>
+            <div class="form-group form-field o_website_form_required_custom" t-if="recaptcha_active == '1'">
+                <label class="control-label" for="g-recaptcha-response">Human?</label>
+                <div>
+                    <t t-if="recaptcha_site_key">
+                        <div class="g-recaptcha" t-att-data-sitekey="recaptcha_site_key"/>
+                        <script src="https://www.google.com/recaptcha/api.js" async="async" defer="defer"/>
+                    </t>
+                    <span class="o_website_form_recaptcha" t-if="not recaptcha_site_key" required="required"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
+
+

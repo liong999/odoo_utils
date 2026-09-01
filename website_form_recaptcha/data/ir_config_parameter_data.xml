@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="recaptcha_active" model="ir.config_parameter">
+            <field name="key">recaptcha.active</field>
+            <field name="value">1</field>
+        </record>
+        <record id="recaptcha_key_site" model="ir.config_parameter">
+            <field name="key">recaptcha.key.site</field>
+            <field name="value">6Ldwb8xxxxxxxxxxxxxxxxxxxxx</field>
+        </record>
+        <record id="recaptcha_key_secret" model="ir.config_parameter">
+            <field name="key">recaptcha.key.secret</field>
+            <field name="value">6Ldwb8wrxxxxxxxxxxxxxxxxxxxxx</field>
+            <field name="group_ids" eval="[(4, ref('base.group_system'))]"/>
+        </record>
+    </data>
+</odoo>
+
