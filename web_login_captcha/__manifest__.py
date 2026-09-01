@@ -16,9 +16,10 @@
             'web_login_captcha/static/src/js/login_captcha.js',
         ],
     },
+    'images': ['static/description/banner.png'],
     'installable': True,
     'application': False,
     'license': 'LGPL-3',
-    "price": 15,
-    "currency": "USD"
+    'price': 15,
+    'currency': 'USD',
 }
