@@ -7,6 +7,15 @@
 </head>
 <body>
     <section class="container mt-5 mb-5" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2b3b4c;">
+        <style>
+            pre code {
+                background-color: transparent !important;
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+            }
+        </style>
         
         <!-- Header / Hero Section -->
         <div class="row">
@@ -241,57 +250,57 @@
 
                 <!-- Code Example 1: Form View -->
                 <div class="card shadow-sm border-0 mb-4" style="border-radius: 12px; border: 1px solid #e1e7ec; overflow: hidden;">
-                    <div class="card-header bg-light d-flex align-items-center justify-content-between p-3">
+                    <div class="card-header bg-light d-flex align-items-center justify-content-between p-3" style="border-bottom: 1px solid #e1e7ec;">
                         <strong style="color: #0d2b52;"><i class="fa fa-code mr-2 text-primary"></i> 1. Form View Usage</strong>
                         <span class="badge badge-secondary">XML Form</span>
                     </div>
                     <div class="card-body p-0">
-                        <pre class="bg-dark text-light p-4 mb-0" style="font-size: 0.92rem; overflow-x: auto; line-height: 1.6;"><code style="color: #e2e8f0;">&lt;!-- Phone / Mobile Number Masking --&gt;
-&lt;field name="mobile" widget="mask_sensitive" options="{'mask_type': 'phone'}"/&gt;
+                        <pre class="p-4 mb-0" style="background-color: #0d1b2a !important; font-size: 0.92rem; overflow-x: auto; line-height: 1.65; font-family: 'SFMono-Regular', Consolas, Menlo, Monaco, monospace;"><code style="background: transparent !important; background-color: transparent !important; color: #e2e8f0 !important; padding: 0 !important; border: none !important; box-shadow: none !important; display: block; font-family: inherit;"><span style="color: #64748b; font-style: italic;">&lt;!-- Phone / Mobile Number Masking --&gt;</span>
+<span style="color: #38bdf8;">&lt;field</span> <span style="color: #93c5fd;">name</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"mobile"</span> <span style="color: #93c5fd;">widget</span><span style="color: #64748b;">=</span><span style="color: #34d399;">"mask_sensitive"</span> <span style="color: #93c5fd;">options</span><span style="color: #64748b;">=</span><span style="color: #f472b6;">"{'mask_type': 'phone'}"</span><span style="color: #38bdf8;">/&gt;</span>
 
-&lt;!-- Work / Private Email Masking --&gt;
-&lt;field name="email" widget="mask_sensitive" options="{'mask_type': 'email'}"/&gt;
+<span style="color: #64748b; font-style: italic;">&lt;!-- Work / Private Email Masking --&gt;</span>
+<span style="color: #38bdf8;">&lt;field</span> <span style="color: #93c5fd;">name</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"email"</span> <span style="color: #93c5fd;">widget</span><span style="color: #64748b;">=</span><span style="color: #34d399;">"mask_sensitive"</span> <span style="color: #93c5fd;">options</span><span style="color: #64748b;">=</span><span style="color: #f472b6;">"{'mask_type': 'email'}"</span><span style="color: #38bdf8;">/&gt;</span>
 
-&lt;!-- Identification ID / Passport / NIK Masking --&gt;
-&lt;field name="identification_id" widget="mask_sensitive" options="{'mask_type': 'id'}"/&gt;
+<span style="color: #64748b; font-style: italic;">&lt;!-- Identification ID / Passport / NIK Masking --&gt;</span>
+<span style="color: #38bdf8;">&lt;field</span> <span style="color: #93c5fd;">name</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"identification_id"</span> <span style="color: #93c5fd;">widget</span><span style="color: #64748b;">=</span><span style="color: #34d399;">"mask_sensitive"</span> <span style="color: #93c5fd;">options</span><span style="color: #64748b;">=</span><span style="color: #f472b6;">"{'mask_type': 'id'}"</span><span style="color: #38bdf8;">/&gt;</span>
 
-&lt;!-- Relational Many2one Field Masking --&gt;
-&lt;field name="partner_id" widget="many2one_mask_sensitive" options="{'mask_type': 'id'}"/&gt;</code></pre>
+<span style="color: #64748b; font-style: italic;">&lt;!-- Relational Many2one Field Masking --&gt;</span>
+<span style="color: #38bdf8;">&lt;field</span> <span style="color: #93c5fd;">name</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"partner_id"</span> <span style="color: #93c5fd;">widget</span><span style="color: #64748b;">=</span><span style="color: #34d399;">"many2one_mask_sensitive"</span> <span style="color: #93c5fd;">options</span><span style="color: #64748b;">=</span><span style="color: #f472b6;">"{'mask_type': 'id'}"</span><span style="color: #38bdf8;">/&gt;</span></code></pre>
                     </div>
                 </div>
 
                 <!-- Code Example 2: Tree / List View -->
                 <div class="card shadow-sm border-0 mb-4" style="border-radius: 12px; border: 1px solid #e1e7ec; overflow: hidden;">
-                    <div class="card-header bg-light d-flex align-items-center justify-content-between p-3">
+                    <div class="card-header bg-light d-flex align-items-center justify-content-between p-3" style="border-bottom: 1px solid #e1e7ec;">
                         <strong style="color: #0d2b52;"><i class="fa fa-list mr-2 text-success"></i> 2. Tree / List View Usage</strong>
                         <span class="badge badge-secondary">XML Tree</span>
                     </div>
                     <div class="card-body p-0">
-                        <pre class="bg-dark text-light p-4 mb-0" style="font-size: 0.92rem; overflow-x: auto; line-height: 1.6;"><code style="color: #e2e8f0;">&lt;list string="Contacts"&gt;
-    &lt;field name="name"/&gt;
-    &lt;field name="phone" widget="mask_sensitive" options="{'mask_type': 'phone'}"/&gt;
-    &lt;field name="email" widget="mask_sensitive" options="{'mask_type': 'email'}"/&gt;
-    &lt;field name="vat" widget="mask_sensitive" options="{'mask_type': 'id'}"/&gt;
-&lt;/list&gt;</code></pre>
+                        <pre class="p-4 mb-0" style="background-color: #0d1b2a !important; font-size: 0.92rem; overflow-x: auto; line-height: 1.65; font-family: 'SFMono-Regular', Consolas, Menlo, Monaco, monospace;"><code style="background: transparent !important; background-color: transparent !important; color: #e2e8f0 !important; padding: 0 !important; border: none !important; box-shadow: none !important; display: block; font-family: inherit;"><span style="color: #38bdf8;">&lt;list</span> <span style="color: #93c5fd;">string</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"Contacts"</span><span style="color: #38bdf8;">&gt;</span>
+    <span style="color: #38bdf8;">&lt;field</span> <span style="color: #93c5fd;">name</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"name"</span><span style="color: #38bdf8;">/&gt;</span>
+    <span style="color: #38bdf8;">&lt;field</span> <span style="color: #93c5fd;">name</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"phone"</span> <span style="color: #93c5fd;">widget</span><span style="color: #64748b;">=</span><span style="color: #34d399;">"mask_sensitive"</span> <span style="color: #93c5fd;">options</span><span style="color: #64748b;">=</span><span style="color: #f472b6;">"{'mask_type': 'phone'}"</span><span style="color: #38bdf8;">/&gt;</span>
+    <span style="color: #38bdf8;">&lt;field</span> <span style="color: #93c5fd;">name</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"email"</span> <span style="color: #93c5fd;">widget</span><span style="color: #64748b;">=</span><span style="color: #34d399;">"mask_sensitive"</span> <span style="color: #93c5fd;">options</span><span style="color: #64748b;">=</span><span style="color: #f472b6;">"{'mask_type': 'email'}"</span><span style="color: #38bdf8;">/&gt;</span>
+    <span style="color: #38bdf8;">&lt;field</span> <span style="color: #93c5fd;">name</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"vat"</span> <span style="color: #93c5fd;">widget</span><span style="color: #64748b;">=</span><span style="color: #34d399;">"mask_sensitive"</span> <span style="color: #93c5fd;">options</span><span style="color: #64748b;">=</span><span style="color: #f472b6;">"{'mask_type': 'id'}"</span><span style="color: #38bdf8;">/&gt;</span>
+<span style="color: #38bdf8;">&lt;/list&gt;</span></code></pre>
                     </div>
                 </div>
 
                 <!-- Code Example 3: Kanban View -->
                 <div class="card shadow-sm border-0 mb-4" style="border-radius: 12px; border: 1px solid #e1e7ec; overflow: hidden;">
-                    <div class="card-header bg-light d-flex align-items-center justify-content-between p-3">
+                    <div class="card-header bg-light d-flex align-items-center justify-content-between p-3" style="border-bottom: 1px solid #e1e7ec;">
                         <strong style="color: #0d2b52;"><i class="fa fa-th-large mr-2 text-warning"></i> 3. Kanban View Usage</strong>
                         <span class="badge badge-secondary">XML Kanban</span>
                     </div>
                     <div class="card-body p-0">
-                        <pre class="bg-dark text-light p-4 mb-0" style="font-size: 0.92rem; overflow-x: auto; line-height: 1.6;"><code style="color: #e2e8f0;">&lt;templates&gt;
-    &lt;t t-name="card"&gt;
-        &lt;div class="d-flex flex-column"&gt;
-            &lt;strong&gt;&lt;field name="name"/&gt;&lt;/strong&gt;
-            &lt;div&gt;&lt;field name="mobile" widget="mask_sensitive" options="{'mask_type': 'phone'}"/&gt;&lt;/div&gt;
-            &lt;div&gt;&lt;field name="email" widget="mask_sensitive" options="{'mask_type': 'email'}"/&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/t&gt;
-&lt;/templates&gt;</code></pre>
+                        <pre class="p-4 mb-0" style="background-color: #0d1b2a !important; font-size: 0.92rem; overflow-x: auto; line-height: 1.65; font-family: 'SFMono-Regular', Consolas, Menlo, Monaco, monospace;"><code style="background: transparent !important; background-color: transparent !important; color: #e2e8f0 !important; padding: 0 !important; border: none !important; box-shadow: none !important; display: block; font-family: inherit;"><span style="color: #38bdf8;">&lt;templates&gt;</span>
+    <span style="color: #38bdf8;">&lt;t</span> <span style="color: #93c5fd;">t-name</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"card"</span><span style="color: #38bdf8;">&gt;</span>
+        <span style="color: #38bdf8;">&lt;div</span> <span style="color: #93c5fd;">class</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"d-flex flex-column"</span><span style="color: #38bdf8;">&gt;</span>
+            <span style="color: #38bdf8;">&lt;strong&gt;&lt;field</span> <span style="color: #93c5fd;">name</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"name"</span><span style="color: #38bdf8;">/&gt;&lt;/strong&gt;</span>
+            <span style="color: #38bdf8;">&lt;div&gt;&lt;field</span> <span style="color: #93c5fd;">name</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"mobile"</span> <span style="color: #93c5fd;">widget</span><span style="color: #64748b;">=</span><span style="color: #34d399;">"mask_sensitive"</span> <span style="color: #93c5fd;">options</span><span style="color: #64748b;">=</span><span style="color: #f472b6;">"{'mask_type': 'phone'}"</span><span style="color: #38bdf8;">/&gt;&lt;/div&gt;</span>
+            <span style="color: #38bdf8;">&lt;div&gt;&lt;field</span> <span style="color: #93c5fd;">name</span><span style="color: #64748b;">=</span><span style="color: #fde047;">"email"</span> <span style="color: #93c5fd;">widget</span><span style="color: #64748b;">=</span><span style="color: #34d399;">"mask_sensitive"</span> <span style="color: #93c5fd;">options</span><span style="color: #64748b;">=</span><span style="color: #f472b6;">"{'mask_type': 'email'}"</span><span style="color: #38bdf8;">/&gt;&lt;/div&gt;</span>
+        <span style="color: #38bdf8;">&lt;/div&gt;</span>
+    <span style="color: #38bdf8;">&lt;/t&gt;</span>
+<span style="color: #38bdf8;">&lt;/templates&gt;</span></code></pre>
                     </div>
                 </div>
             </div>
