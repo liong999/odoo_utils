@@ -7,7 +7,7 @@
     'author': "Liong",
     'website': "https://www.linkedin.com/in/nagara-liong-50ab07136/",
     'license': 'LGPL-3',
-    'price': 15,
+    'price': 5,
     'currency': 'USD',
     'depends': ['web'],
     'data': [
