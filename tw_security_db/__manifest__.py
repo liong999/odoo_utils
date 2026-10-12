@@ -7,8 +7,8 @@
         and all database management endpoints (create, duplicate, drop, backup, restore)
         to superuser only.
     """,
-    'author': "Tunas Honda",
-    'website': "https://www.honda-ku.com",
+    'author': "Liong",
+    'website': "https://www.linkedin.com/in/nagara-liong-50ab07136/",
     'category': 'Extra Tools',
     'version': '18.0.1.0.0',
     'license': 'LGPL-3',
