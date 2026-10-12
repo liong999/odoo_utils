@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Web Mask Widget",
+    'name': "TW Mask Widget",
     'summary': "Widget to mask sensitive data (phone, email, ID) in Form, List, and Kanban views",
     'version': '18.0.1.0.0',
     'category': 'Web',
@@ -15,9 +15,9 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'web_mask_widget/static/src/css/mask_widget.css',
-            'web_mask_widget/static/src/xml/mask_widget.xml',
-            'web_mask_widget/static/src/js/mask_widget.js',
+            'tw_mask_widget/static/src/css/mask_widget.css',
+            'tw_mask_widget/static/src/xml/mask_widget.xml',
+            'tw_mask_widget/static/src/js/mask_widget.js',
         ],
     },
     'images': [

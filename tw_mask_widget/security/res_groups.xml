@@ -10,7 +10,7 @@
         <!-- Masking Admin Group - users with this group can see unmasked sensitive data -->
         <record id="group_masking_admin" model="res.groups">
             <field name="name">Masking Admin</field>
-            <field name="category_id" ref="web_mask_widget.module_category_masking"/>
+            <field name="category_id" ref="tw_mask_widget.module_category_masking"/>
             <field name="comment">Users with this group can see unmasked sensitive information (phone, email, ID, etc.)</field>
         </record>
     </data>

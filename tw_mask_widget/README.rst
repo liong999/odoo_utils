@@ -1,6 +1,6 @@
-===================
-Web Mask Widget 18.0
-===================
+==================
+TW Mask Widget 18.0
+==================
 
 Sensitive Information Masking Widget for Odoo 18.0 (OWL).
 

@@ -19,7 +19,7 @@ async function checkIsMaskAdmin(userService) {
     }
     if (!maskAdminPromise) {
         maskAdminPromise = userService
-            .hasGroup("web_mask_widget.group_masking_admin")
+            .hasGroup("tw_mask_widget.group_masking_admin")
             .then((res) => {
                 isMaskAdminCache = Boolean(res);
                 return isMaskAdminCache;
@@ -118,7 +118,7 @@ function maskMany2One(value, maskType = "id") {
 }
 
 export class MaskSensitiveField extends Component {
-    static template = "web_mask_widget.MaskSensitiveField";
+    static template = "tw_mask_widget.MaskSensitiveField";
     static props = {
         ...standardFieldProps,
         placeholder: { type: String, optional: true },

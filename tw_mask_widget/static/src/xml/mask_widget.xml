@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="web_mask_widget.MaskSensitiveField">
+    <t t-name="tw_mask_widget.MaskSensitiveField">
         <t t-if="props.readonly">
             <span class="o_mask_sensitive_readonly" t-esc="displayValue" />
         </t>
