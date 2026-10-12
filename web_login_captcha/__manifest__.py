@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Web Login Captcha',
-    'version': '1.0',
+    'version': '20.0.1.0.0',
     'summary': 'Add Google reCAPTCHA to Backend Login, for admin and backoffice users',
     'category': 'Website',
     'author': "Liong",

@@ -2,7 +2,7 @@
 {
     'name': "TW Mask Widget",
     'summary': "Widget to mask sensitive data (phone, email, ID) in Form, List, and Kanban views",
-    'version': '18.0.1.0.0',
+    'version': '20.0.1.0.0',
     'category': 'Web',
     'author': "Liong",
     'website': "https://www.linkedin.com/in/nagara-liong-50ab07136/",
@@ -27,7 +27,7 @@
     'application': False,
     'auto_install': False,
     'description': """
-Sensitive Information Masking Widget for Odoo 18
+Sensitive Information Masking Widget for Odoo 20
 ================================================
 Protect sensitive customer and business data across your Odoo database.
 

@@ -1,8 +1,8 @@
 ==================
-TW Mask Widget 18.0
+TW Mask Widget 20.0
 ==================
 
-Sensitive Information Masking Widget for Odoo 18.0 (OWL).
+Sensitive Information Masking Widget for Odoo 20.0 (OWL).
 
 This module provides modern OWL field widgets (``mask_sensitive`` and ``many2one_mask_sensitive``) to mask sensitive information like phone numbers, emails, and identification IDs across Form, List, and Kanban views.
 
