@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TW Database Security</title>
+</head>
+<body>
+    <section class="container mt-5 mb-5" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2b3b4c;">
+        
+        <!-- Header / Hero Section -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <span class="badge badge-pill px-3 py-2 mb-3 text-uppercase font-weight-bold" style="background-color: rgba(0, 160, 157, 0.12); color: #00a09d; letter-spacing: 1px; font-size: 0.85rem;">
+                    Enterprise Database Hardening & Security
+                </span>
+                <h1 class="display-4 font-weight-bold" style="color: #0d2b52; margin-bottom: 12px; letter-spacing: -0.5px;">
+                    TW Database Security
+                </h1>
+                <p class="lead mx-auto" style="color: #5a6a7e; font-size: 1.25rem; max-width: 820px; line-height: 1.6;">
+                    Restrict <code>/web/database/manager</code>, <code>/web/database/selector</code>, and all database lifecycle endpoints (Create, Duplicate, Drop, Backup, Restore) strictly to <strong>Superuser Only</strong>.
+                </p>
+                <div class="mt-4 text-center">
+                    <img src="banner.png" alt="TW Database Security Banner" class="img-fluid rounded shadow-lg mx-auto d-block w-100" style="max-height: 480px; object-fit: cover; border: 1px solid #e1e7ec;" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Problem Solved & Security Rationale -->
+        <div class="row mt-5 pt-3">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="p-4 p-md-5 rounded shadow-sm" style="background: linear-gradient(135deg, #f0f7f7 0%, #eef3f9 100%); border-left: 5px solid #00a09d;">
+                    <h3 class="font-weight-bold mb-3" style="color: #0d2b52;">
+                        <i class="fa fa-shield mr-2" style="color: #00a09d;"></i> Prevent Database Exposure & Master Password Exploits
+                    </h3>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: #475569; margin-bottom: 0;">
+                        In standard Odoo deployments, database management screens (<code>/web/database/manager</code> and <code>/web/database/selector</code>) are accessible to anyone over the internet if reverse-proxy rules are misconfigured. Attackers frequently use automated scanners to brute-force the master password, dump confidential customer databases, or execute destructive drop commands.
+                        <br/><br/>
+                        <strong>TW Database Security</strong> seals all database management routes at the Python controller layer. Unauthenticated visitors are instantly redirected to the login screen, while standard authenticated users receive an immediate <strong>HTTP 403 Forbidden</strong> response. Only the system <strong>Superuser (OdooBot / ID 1)</strong> is permitted to access database management functions.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Features Section -->
+        <div class="row mt-5 pt-4">
+            <div class="col-md-12 text-center mb-5">
+                <h2 class="font-weight-bold" style="color: #0d2b52;">Key Security Highlights</h2>
+                <hr style="width: 60px; border-top: 4px solid #00a09d; margin: 15px auto;" />
+                <p class="text-muted" style="font-size: 1.1rem;">Zero-configuration, defense-in-depth security for production Odoo environments</p>
+            </div>
+
+            <!-- Feature 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0" style="transition: transform 0.25s ease, box-shadow 0.25s ease; border-radius: 12px; border: 1px solid #e8ecf1;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 24px rgba(13,43,82,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)';">
+                    <div class="card-body p-4 text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3" style="width: 72px; height: 72px; border-radius: 50%; background: rgba(0, 160, 157, 0.1);">
+                            <i class="fa fa-user-secret fa-2x" style="color: #00a09d;"></i>
+                        </div>
+                        <h5 class="font-weight-bold mb-2" style="color: #0d2b52;">Superuser-Only Access</h5>
+                        <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6;">
+                            Strictly verifies <code>request.session.uid == SUPERUSER_ID</code>. Even administrative staff cannot touch database manager unless logged in as Superuser.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0" style="transition: transform 0.25s ease, box-shadow 0.25s ease; border-radius: 12px; border: 1px solid #e8ecf1;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 24px rgba(13,43,82,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)';">
+                    <div class="card-body p-4 text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3" style="width: 72px; height: 72px; border-radius: 50%; background: rgba(13, 43, 82, 0.08);">
+                            <i class="fa fa-sign-in fa-2x" style="color: #0d2b52;"></i>
+                        </div>
+                        <h5 class="font-weight-bold mb-2" style="color: #0d2b52;">Auto Login Redirect</h5>
+                        <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6;">
+                            Anonymous internet visitors attempting to browse database URLs are seamlessly redirected to <code>/web/login</code>, concealing internal database information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0" style="transition: transform 0.25s ease, box-shadow 0.25s ease; border-radius: 12px; border: 1px solid #e8ecf1;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 24px rgba(13,43,82,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)';">
+                    <div class="card-body p-4 text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3" style="width: 72px; height: 72px; border-radius: 50%; background: rgba(220, 53, 69, 0.1);">
+                            <i class="fa fa-ban fa-2x" style="color: #dc3545;"></i>
+                        </div>
+                        <h5 class="font-weight-bold mb-2" style="color: #0d2b52;">HTTP 403 Forbidden</h5>
+                        <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6;">
+                            Authenticated non-superuser users attempting to invoke database routes or POST actions immediately receive a clean, native <code>werkzeug.exceptions.Forbidden</code>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0" style="transition: transform 0.25s ease, box-shadow 0.25s ease; border-radius: 12px; border: 1px solid #e8ecf1;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 24px rgba(13,43,82,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)';">
+                    <div class="card-body p-4 text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3" style="width: 72px; height: 72px; border-radius: 50%; background: rgba(40, 167, 69, 0.1);">
+                            <i class="fa fa-database fa-2x" style="color: #28a745;"></i>
+                        </div>
+                        <h5 class="font-weight-bold mb-2" style="color: #0d2b52;">Complete Lifecycle Defense</h5>
+                        <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6;">
+                            Protects all backend endpoints: <code>create</code>, <code>duplicate</code>, <code>drop</code>, <code>backup</code>, <code>restore</code>, and <code>change_password</code>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0" style="transition: transform 0.25s ease, box-shadow 0.25s ease; border-radius: 12px; border: 1px solid #e8ecf1;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 24px rgba(13,43,82,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)';">
+                    <div class="card-body p-4 text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3" style="width: 72px; height: 72px; border-radius: 50%; background: rgba(111, 66, 193, 0.1);">
+                            <i class="fa fa-code fa-2x" style="color: #6f42c1;"></i>
+                        </div>
+                        <h5 class="font-weight-bold mb-2" style="color: #0d2b52;">JSON-RPC List Lock</h5>
+                        <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6;">
+                            Locks the JSON-RPC route <code>/web/database/list</code>, preventing automated scripts from enumerating database names installed on your cluster.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0" style="transition: transform 0.25s ease, box-shadow 0.25s ease; border-radius: 12px; border: 1px solid #e8ecf1;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 24px rgba(13,43,82,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)';">
+                    <div class="card-body p-4 text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3" style="width: 72px; height: 72px; border-radius: 50%; background: rgba(255, 152, 0, 0.1);">
+                            <i class="fa fa-plug fa-2x" style="color: #ff9800;"></i>
+                        </div>
+                        <h5 class="font-weight-bold mb-2" style="color: #0d2b52;">100% Plug &amp; Play</h5>
+                        <p class="text-muted" style="font-size: 0.95rem; line-height: 1.6;">
+                            Requires no configuration screens or manual setup. Just install the module and database security is instantly enforced server-wide.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Protected Endpoints Table -->
+        <div class="row mt-5 pt-3">
+            <div class="col-md-12">
+                <div class="card shadow-sm border-0" style="border-radius: 14px; overflow: hidden; border: 1px solid #e1e7ec;">
+                    <div class="card-header p-4" style="background: #0d2b52; color: #fff;">
+                        <h4 class="font-weight-bold mb-1"><i class="fa fa-lock mr-2" style="color: #00a09d;"></i> Comprehensive Route Protection Overview</h4>
+                        <p class="mb-0 text-light" style="font-size: 0.95rem; opacity: 0.85;">All standard Odoo database endpoints intercepted and secured by this module</p>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0" style="font-size: 0.98rem;">
+                                <thead style="background-color: #f8fafc; color: #475569;">
+                                    <tr>
+                                        <th class="p-3">Route Endpoint</th>
+                                        <th class="p-3">HTTP Type / Method</th>
+                                        <th class="p-3">Target Action</th>
+                                        <th class="p-3">Standard User Behavior</th>
+                                        <th class="p-3">Superuser Behavior</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="p-3 align-middle font-weight-bold text-dark"><code>/web/database/selector</code></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-info px-2 py-1">HTTP GET</span></td>
+                                        <td class="p-3 align-middle">Select Database Screen</td>
+                                        <td class="p-3 align-middle"><span class="badge badge-danger px-2 py-1">403 Forbidden / Redirect</span></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-success px-2 py-1">Allowed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 align-middle font-weight-bold text-dark"><code>/web/database/manager</code></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-info px-2 py-1">HTTP GET</span></td>
+                                        <td class="p-3 align-middle">Database Management Dashboard</td>
+                                        <td class="p-3 align-middle"><span class="badge badge-danger px-2 py-1">403 Forbidden / Redirect</span></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-success px-2 py-1">Allowed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 align-middle font-weight-bold text-dark"><code>/web/database/create</code></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-warning px-2 py-1 text-white">HTTP POST</span></td>
+                                        <td class="p-3 align-middle">Create New Database</td>
+                                        <td class="p-3 align-middle"><span class="badge badge-danger px-2 py-1">403 Forbidden</span></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-success px-2 py-1">Allowed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 align-middle font-weight-bold text-dark"><code>/web/database/duplicate</code></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-warning px-2 py-1 text-white">HTTP POST</span></td>
+                                        <td class="p-3 align-middle">Duplicate Existing Database</td>
+                                        <td class="p-3 align-middle"><span class="badge badge-danger px-2 py-1">403 Forbidden</span></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-success px-2 py-1">Allowed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 align-middle font-weight-bold text-dark"><code>/web/database/drop</code></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-warning px-2 py-1 text-white">HTTP POST</span></td>
+                                        <td class="p-3 align-middle">Drop / Delete Database</td>
+                                        <td class="p-3 align-middle"><span class="badge badge-danger px-2 py-1">403 Forbidden</span></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-success px-2 py-1">Allowed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 align-middle font-weight-bold text-dark"><code>/web/database/backup</code></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-warning px-2 py-1 text-white">HTTP POST</span></td>
+                                        <td class="p-3 align-middle">Download Database Backup (.zip)</td>
+                                        <td class="p-3 align-middle"><span class="badge badge-danger px-2 py-1">403 Forbidden</span></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-success px-2 py-1">Allowed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 align-middle font-weight-bold text-dark"><code>/web/database/restore</code></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-warning px-2 py-1 text-white">HTTP POST</span></td>
+                                        <td class="p-3 align-middle">Restore Database File</td>
+                                        <td class="p-3 align-middle"><span class="badge badge-danger px-2 py-1">403 Forbidden</span></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-success px-2 py-1">Allowed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 align-middle font-weight-bold text-dark"><code>/web/database/change_password</code></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-warning px-2 py-1 text-white">HTTP POST</span></td>
+                                        <td class="p-3 align-middle">Change Master Password</td>
+                                        <td class="p-3 align-middle"><span class="badge badge-danger px-2 py-1">403 Forbidden</span></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-success px-2 py-1">Allowed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 align-middle font-weight-bold text-dark"><code>/web/database/list</code></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-dark px-2 py-1">JSON-RPC</span></td>
+                                        <td class="p-3 align-middle">Fetch Database Name Array</td>
+                                        <td class="p-3 align-middle"><span class="badge badge-danger px-2 py-1">403 Forbidden</span></td>
+                                        <td class="p-3 align-middle"><span class="badge badge-success px-2 py-1">Allowed</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works Architecture Flow -->
+        <div class="row mt-5 pt-3">
+            <div class="col-md-12">
+                <div class="p-4 p-md-5 rounded shadow-sm" style="background: linear-gradient(135deg, #0d2b52 0%, #163e72 100%); color: #ffffff; border-radius: 14px;">
+                    <h3 class="font-weight-bold mb-4">
+                        <i class="fa fa-cogs mr-2" style="color: #00a09d;"></i> How the Security Verification Works
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="p-3 rounded h-100" style="background: rgba(255, 255, 255, 0.08); border-left: 4px solid #00a09d;">
+                                <h6 class="font-weight-bold text-white">1. Session Inspection</h6>
+                                <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0;">
+                                    When an HTTP or JSON request hits any database route, the controller checks <code>request.session.uid</code>.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="p-3 rounded h-100" style="background: rgba(255, 255, 255, 0.08); border-left: 4px solid #ff9800;">
+                                <h6 class="font-weight-bold text-white">2. Unauthenticated Interception</h6>
+                                <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0;">
+                                    If the user is not logged in (anonymous visitor), the system redirects immediately to <code>/web/login</code>.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="p-3 rounded h-100" style="background: rgba(255, 255, 255, 0.08); border-left: 4px solid #28a745;">
+                                <h6 class="font-weight-bold text-white">3. Superuser Authorization</h6>
+                                <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0;">
+                                    If logged in, it verifies <code>uid == SUPERUSER_ID</code>. Only the true root superuser proceeds; all others receive <strong>HTTP 403</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="row mt-5 pt-4">
+            <div class="col-md-12 text-center mb-5">
+                <h2 class="font-weight-bold" style="color: #0d2b52;">Frequently Asked Questions</h2>
+                <hr style="width: 60px; border-top: 4px solid #00a09d; margin: 15px auto;" />
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm border-0 p-4" style="border-radius: 10px; border: 1px solid #e1e7ec;">
+                    <h5 class="font-weight-bold" style="color: #0d2b52;"><i class="fa fa-question-circle text-info mr-2"></i> How do I access database manager after installing?</h5>
+                    <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+                        Simply log into your Odoo instance as the root administrator (Superuser). Once authenticated, visit <code>/web/database/manager</code> normally.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm border-0 p-4" style="border-radius: 10px; border: 1px solid #e1e7ec;">
+                    <h5 class="font-weight-bold" style="color: #0d2b52;"><i class="fa fa-question-circle text-info mr-2"></i> Can regular portal or backend users bypass this?</h5>
+                    <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+                        No. Even users with Full Accounting or System Administration groups cannot access these routes unless they are logged in with the superuser credential.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm border-0 p-4" style="border-radius: 10px; border: 1px solid #e1e7ec;">
+                    <h5 class="font-weight-bold" style="color: #0d2b52;"><i class="fa fa-question-circle text-info mr-2"></i> Does this conflict with Nginx or Cloudflare?</h5>
+                    <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+                        Not at all. It acts as an application-level barrier, providing defense-in-depth even if reverse proxy location blocks fail or are misconfigured.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm border-0 p-4" style="border-radius: 10px; border: 1px solid #e1e7ec;">
+                    <h5 class="font-weight-bold" style="color: #0d2b52;"><i class="fa fa-question-circle text-info mr-2"></i> Are automated backup scripts affected?</h5>
+                    <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.6;">
+                        Standard command-line tools (e.g. <code>pg_dump</code>) work directly via PostgreSQL and are completely unaffected.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer / Support Section -->
+        <div class="row mt-5 pt-4 text-center">
+            <div class="col-12">
+                <div class="p-5 rounded" style="background: #f8fafc; border: 1px solid #e1e7ec;">
+                    <h3 class="font-weight-bold" style="color: #0d2b52;">Need Help or Enterprise Customization?</h3>
+                    <p class="text-muted mt-2 mb-4" style="font-size: 1.05rem;">
+                        We assist organizations in hardening Odoo enterprise environments, compliance audits, and security infrastructure.
+                    </p>
+                    <a href="https://www.honda-ku.com" target="_blank" class="btn btn-lg px-5 py-3 font-weight-bold text-white shadow-sm" style="background-color: #00a09d; border-radius: 30px;">
+                        <i class="fa fa-envelope-o mr-2"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>
