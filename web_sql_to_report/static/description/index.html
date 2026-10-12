@@ -168,15 +168,21 @@
     <span style="color: #93c5fd;">self</span>.env.cr.execute(query)
     report_data <span style="color: #64748b;">=</span> <span style="color: #93c5fd;">self</span>.env.cr.dictfetchall()
 
-    <span style="color: #64748b; font-style: italic;"># 2. Generate and download report</span>
+    <span style="color: #64748b; font-style: italic;"># Option A: Quick & Minimal (Standard Excel Export)</span>
+    <span style="color: #64748b; font-style: italic;"># return self.env['web.report'].generate_report(</span>
+    <span style="color: #64748b; font-style: italic;">#     report_name='Customer Report',</span>
+    <span style="color: #64748b; font-style: italic;">#     data=report_data,</span>
+    <span style="color: #64748b; font-style: italic;"># )</span>
+
+    <span style="color: #64748b; font-style: italic;"># Option B: Advanced Customization (Header Styling, Dates &amp; Summary Footers)</span>
     <span style="color: #f472b6;">return</span> <span style="color: #93c5fd;">self</span>.env[<span style="color: #fde047;">'web.report'</span>].generate_report(
         report_name<span style="color: #64748b;">=</span><span style="color: #fde047;">'Customer Report'</span>,
         data<span style="color: #64748b;">=</span>report_data,
-        start_date<span style="color: #64748b;">=</span><span style="color: #fde047;">'2026-01-01'</span>,
-        end_date<span style="color: #64748b;">=</span><span style="color: #fde047;">'2026-12-31'</span>,
-        header_color<span style="color: #64748b;">=</span><span style="color: #fde047;">'#D9EDF7'</span>,
-        numbering<span style="color: #64748b;">=</span><span style="color: #34d399;">True</span>,
-        show_total_footer<span style="color: #64748b;">=</span><span style="color: #34d399;">True</span>
+        start_date<span style="color: #64748b;">=</span><span style="color: #fde047;">'2026-01-01'</span>,          <span style="color: #64748b; font-style: italic;"># Optional: Adds report title banner with period range</span>
+        end_date<span style="color: #64748b;">=</span><span style="color: #fde047;">'2026-12-31'</span>,            <span style="color: #64748b; font-style: italic;"># Optional: End date for the title banner</span>
+        header_color<span style="color: #64748b;">=</span><span style="color: #fde047;">'#D9EDF7'</span>,           <span style="color: #64748b; font-style: italic;"># Optional: Custom pastel HEX color for table headers</span>
+        numbering<span style="color: #64748b;">=</span><span style="color: #34d399;">True</span>,                   <span style="color: #64748b; font-style: italic;"># Optional: Incremental 'No' column</span>
+        show_total_footer<span style="color: #64748b;">=</span><span style="color: #34d399;">True</span>,           <span style="color: #64748b; font-style: italic;"># Optional: Auto SUM footer row for numeric fields</span>
     )</code></pre>
                     </div>
                 </div>
