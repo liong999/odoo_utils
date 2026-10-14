@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "TW Mask Widget",
+    'name': "Mask Widget",
     'summary': "Widget to mask sensitive data (phone, email, ID) in Form, List, and Kanban views",
     'version': '18.0.1.0.0',
     'category': 'Web',
