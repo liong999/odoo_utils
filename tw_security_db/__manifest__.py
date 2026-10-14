@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "TW Database Security",
+    'name': "Database Security",
     'summary': "Restrict Database Manager and Selector URLs to Superuser only",
     'description': """
         Module to restrict access to /web/database/manager, /web/database/selector,
